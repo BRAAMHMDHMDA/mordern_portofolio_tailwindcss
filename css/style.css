@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* Start main classes */
+    .main-container{
+        @apply container mx-auto px-4 xl:max-w-[1200px];
+    }
+    .flex-center{
+        @apply flex justify-center items-center;
+    }
+
+    .section-title{
+        @apply text-center md:max-w-[60%] mx-auto mb-12 md:mb-0 font-Ovo;
+        :first-child{
+            @apply text-lg mb-1 md:mb-2;
+        }
+        :nth-child(2){
+            @apply text-4xl md:text-5xl mb-3 md:mb-5 ;
+        }
+        p{
+            @apply text-sm md:text-base;
+        }
+        
+    }
+    /* End main classes */
+    nav .nav-link{
+        @apply capitalize cursor-pointer px-1;
+    }
+    
+    .mobile-menu{
+        @apply font-Ovo md:hidden 
+        flex flex-col gap-5 bg-rose-50 w-64
+        h-screen fixed top-0 right-0 bottom-0 px-10 py-24
+        transition duration-500 translate-x-64
+        dark:bg-dark_hover dark:text-white 
+        ;
+    }
+    .mobile-menu.open{
+        @apply translate-x-0;
+    }
+    .card{
+        @apply flex-1 min-w-44 border border-gray-400
+        rounded-xl p-6 hover:-translate-y-1 hover:bg-light_hover
+        hover:shadow-black duration-500 cursor-pointer
+        dark:border-white dark:hover:shadow-white dark:hover:bg-dark_hover/50
+        ;
+    }
+    .icon{
+        @apply border border-gray-400 p-4 rounded-xl w-14 hover:-translate-y-1 duration-500 cursor-pointer aspect-square hover:bg-light_hover dark:hover:bg-dark_hover;
+    }
+}
